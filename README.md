@@ -1,69 +1,42 @@
-# React + TypeScript + Vite
+# React Developer Assessment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React application that provides an auto-complete search input to display the selected user's name and address. The app fetches data from the JSONPlaceholder API and uses Material UI's Autocomplete component.
 
-Currently, two official plugins are available:
+# Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Fetch API: Retrieves users from https://jsonplaceholder.typicode.com/users.
 
-## Expanding the ESLint configuration
+- Material UI Autocomplete: Provides a user-friendly search interface.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Name Formatting: Displays user names as {Last Name} {Suffix}, {First Name} (Title) sorted alphabetically by last name.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Address Display: Shows the selected user's address.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## Prerequisites
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Node.js: Version 18 or newer (Node 20 LTS recommended).
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- npm (comes with Node.js).
+
+# Local Development
 
 ```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+// 1. Clone the repository
+git clone 'https://github.com/amiralikht/react_assessment_experient.git'
+cd react_assessment_experient
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+// 2. Install dependencies
+npm install
+
+// 3. Start the development server
+npm run dev
 ```
+Visit http://localhost:5173/ in your browser.
+
+# Building for Production
+```js
+npm run build
+```
+# Notes
+
+- No environment variables or additional configuration are required.
