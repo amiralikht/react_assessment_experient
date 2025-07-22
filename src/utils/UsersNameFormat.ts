@@ -59,21 +59,21 @@ export function formatParsedName(p: ParsedName): string {
 }
 
 export function compareParsedNames(a: ParsedName, b: ParsedName): number {
-    const la = (a.last || a.first).toLocaleLowerCase();
-    const lb = (b.last || b.first).toLocaleLowerCase();
-    if (la < lb) return -1;
-    if (la > lb) return 1;
-    const fa = a.first.toLocaleLowerCase();
-    const fb = b.first.toLocaleLowerCase();
-    if (fa < fb) return -1;
-    if (fa > fb) return 1;
-    const sa = (a.suffix || '').toLocaleLowerCase();
-    const sb = (b.suffix || '').toLocaleLowerCase();
-    if (sa < sb) return -1;
-    if (sa > sb) return 1;
-    const ta = (a.title || '').toLocaleLowerCase();
-    const tb = (b.title || '').toLocaleLowerCase();
-    if (ta < tb) return -1;
-    if (ta > tb) return 1;
+    const last_a = (a.last || a.first).toLocaleLowerCase();
+    const last_b = (b.last || b.first).toLocaleLowerCase();
+    if (last_a < last_b) return -1;
+    if (last_a > last_b) return 1;
+    const first_a = a.first.toLocaleLowerCase();
+    const first_b = b.first.toLocaleLowerCase();
+    if (first_a < first_b) return -1;
+    if (first_a > first_b) return 1;
+    const suffix_a = (a.suffix || '').toLocaleLowerCase();
+    const suffix_b = (b.suffix || '').toLocaleLowerCase();
+    if (suffix_a < suffix_b) return -1;
+    if (suffix_a > suffix_b) return 1;
+    const title_a = (a.title || '').toLocaleLowerCase();
+    const title_b = (b.title || '').toLocaleLowerCase();
+    if (title_a < title_b) return -1;
+    if (title_a > title_b) return 1;
     return 0;
 }
